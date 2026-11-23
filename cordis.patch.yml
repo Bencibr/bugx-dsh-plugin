@@ -1,0 +1,4 @@
+# BugX DSH plugin bundle patch: registers the session-aware MCP bridge and sidebar UI.
+- insert:
+    - id: bugx-dsh-plugin
+      name: 'bugx-dsh-plugin'

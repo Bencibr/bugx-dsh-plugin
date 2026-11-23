@@ -1,0 +1,60 @@
+{
+  "name": "bugx-dsh-plugin",
+  "version": "0.1.0",
+  "description": "Session-aware MCP bridge and sidebar UI for running BugX local code audits in DSH.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ],
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-subprocess": ">=0.1.0-rc.1 <0.2.0-0",
+    "@deepseek-ai/schemastery": ">=3.18.0 <4.0.0"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "index.js",
+    "client.js",
+    "screenshots.json",
+    "assets/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "bugx",
+    "mcp",
+    "code-audit",
+    "security"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bencibr/bugx-dsh-plugin.git"
+  },
+  "homepage": "https://github.com/Bencibr/bugx-dsh-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/Bencibr/bugx-dsh-plugin/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}

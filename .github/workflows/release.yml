@@ -1,0 +1,30 @@
+name: Release DSH Plugin
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  pack-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Verify syntax and pack tarball
+        run: |
+          node --check index.js
+          node --check client.js
+          TARBALL=$(npm pack --silent)
+          cp "$TARBALL" "bugx-dsh-plugin.tgz"
+      - name: Attach tarball to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            bugx-dsh-plugin.tgz
+            *.tgz
