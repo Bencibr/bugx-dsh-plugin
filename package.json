@@ -1,7 +1,7 @@
 {
   "name": "bugx-dsh-plugin",
-  "version": "0.1.0",
-  "description": "Session-aware MCP bridge and sidebar UI for running BugX local code audits in DSH.",
+  "version": "0.1.1",
+  "description": "Session-aware MCP bridge and sidebar UI for BugX autonomous code review and testing in DSH.",
   "type": "module",
   "main": "index.js",
   "exports": {

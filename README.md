@@ -5,7 +5,7 @@
 <h1 align="center">bugx-dsh-plugin</h1>
 
 <p align="center">
-  Session-aware MCP bridge and sidebar UI for running <a href="https://bugx.dev">BugX</a> local code audits inside DeepSeek Harness (DSH).
+  Session-aware MCP bridge and sidebar UI for running <a href="https://bugx.dev">BugX</a> autonomous code review and testing inside DeepSeek Harness (DSH).
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
 
 ## Prerequisites
 
-This plugin bridges DSH to your local `bugx` CLI (`>=0.1.2`). Install `bugx-cli` first:
+This plugin bridges DSH to your local `bugx` CLI (`>=0.1.3`). Install `bugx-cli` first:
 
 ```bash
 # Python (>=3.11)
