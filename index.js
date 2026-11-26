@@ -155,7 +155,7 @@ export async function apply(ctx, config) {
   async function connectionFor(cwd) {
     let connection = connections.get(cwd);
     if (connection) return connection;
-    const client = new Client({ name: "bugx-dsh-session-client", version: "0.1.5" }, { capabilities: {} });
+    const client = new Client({ name: "bugx-dsh-session-client", version: "0.1.6" }, { capabilities: {} });
     const transport = new StdioClientTransport({
       command: config.command,
       args: [...config.args, "--root", cwd, "--role", config.role],
