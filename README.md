@@ -19,7 +19,7 @@
 
 ## Prerequisites
 
-This plugin bridges DSH to your local `bugx` CLI (`>=0.1.4`). Install `bugx-cli` first:
+This plugin bridges DSH to your local `bugx` CLI (`>=0.1.5`). Install `bugx-cli` first:
 
 ```bash
 # Python (>=3.11)
