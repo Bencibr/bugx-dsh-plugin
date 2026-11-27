@@ -1,4 +1,35 @@
-# BugX DSH plugin bundle patch: registers the session-aware MCP bridge and sidebar UI.
+# BugX DSH plugin bundle patch: registers bundled skills/UI/PATH setup and
+# DSH's official @deepseek-ai/dsh-mcp-client channels (no custom MCP proxy).
 - insert:
     - id: bugx-dsh-plugin
       name: 'bugx-dsh-plugin'
+    - id: bugx-supervisor
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: bugx-supervisor
+        transport: stdio
+        command: bugx
+        args:
+          - mcp
+          - serve
+    - id: bugx-supervisor-worker
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: bugx-supervisor-worker
+        transport: stdio
+        command: bugx
+        args:
+          - mcp
+          - serve
+          - --role
+          - worker
+    - id: bugx-docs
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: bugx-docs
+        transport: stdio
+        command: bugx
+        args:
+          - mcp
+          - docs
+          - serve

@@ -1,7 +1,7 @@
 {
   "name": "bugx-dsh-plugin",
-  "version": "0.1.6",
-  "description": "Session-aware MCP bridge and sidebar UI for BugX autonomous code review and testing in DSH.",
+  "version": "0.1.7",
+  "description": "BugX autonomous code review and testing plugin for DSH: bundles bugx-cli, skills (/bugx, /bugx-dsh), /bugx-cli command, official MCP channels, and sidebar UI.",
   "type": "module",
   "main": "index.js",
   "exports": {
@@ -21,17 +21,31 @@
     }
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.12.0",
-    "zod": "^4.4.3"
+    "bugx-cli": ">=0.1.7"
   },
   "peerDependencies": {
+    "@deepseek-ai/dsh-mcp-client": ">=0.1.0-rc.1 <1.0.0-0",
     "@deepseek-ai/dsh-subprocess": ">=0.1.0-rc.1 <1.0.0-0",
-    "@deepseek-ai/schemastery": ">=3.18.0 <4.0.0"
+    "@deepseek-ai/schemastery": ">=3.18.0 <4.0.0",
+    "@deepseek-ai/dsh-skill": ">=0.1.0-rc.1 <1.0.0-0",
+    "@deepseek-ai/dsh-commands": ">=0.1.0-rc.1 <1.0.0-0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-mcp-client": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-skill": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-commands": {
+      "optional": true
+    }
   },
   "files": [
     "cordis.patch.yml",
     "index.js",
     "client.js",
+    "skills/",
     "screenshots.json",
     "assets/",
     "README.md",

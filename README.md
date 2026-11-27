@@ -14,12 +14,14 @@
 
 ## What it does
 
+- **Bundled Slash Skills (`skills/bugx/`, `skills/bugx-dsh/`)**: Registers `/bugx` and `/bugx-dsh` directly in DSH upon plugin installation — no separate `bugx install --agent dsh` step required.
+- **Direct CLI Command (`/bugx-cli`)**: Run `bugx` CLI subcommands (e.g. `/bugx-cli status`, `/bugx-cli doctor`, `/bugx-cli help`) directly inside the active DSH workspace.
 - **Session-aware MCP bridge (`index.js`)**: Keeps BugX tool schemas registered process-wide while spawning an isolated `bugx mcp serve --root <session-cwd>` process per DSH session working directory.
-- **Web sidebar UI (`client.js`)**: Adds the BugX brand icon and sidebar tab to the DSH Web interface.
+- **Web sidebar UI (`client.js`)**: Adds the BugX brand icon and quick-command sidebar tab to the DSH Web interface.
 
 ## Prerequisites
 
-This plugin bridges DSH to your local `bugx` CLI (`>=0.1.6`). Install `bugx-cli` first:
+This plugin bridges DSH to your local `bugx` CLI (`>=0.1.7`). Install `bugx-cli` first:
 
 ```bash
 # Python (>=3.11)
